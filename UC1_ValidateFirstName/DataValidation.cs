@@ -10,8 +10,6 @@ namespace Regex01
     public class DataValidation
     {
         public Regex First_Name_Regex = new Regex(@"^[A-Z]{1}[A-Za-z]{2,}?$");
-        public Regex Last_Name_Regex = new Regex(@"^[A-Z]{1}[A-Za-z]{2,}?$");
-        public Regex Email_Regex = new Regex("^[A-Za-z]{3,}([.][A-Za-z]{3,})?[@][A-Za-z]{2,}[.][A-Za-z]{2,}([.][A-Za-z]{2})?$");
         public void ValidateFirstName()
         {
             Console.Write("Enter First Name : ");
@@ -26,6 +24,7 @@ namespace Regex01
                 Console.WriteLine("The First Name Is Not Valid");
             }
         }
+        public Regex Last_Name_Regex = new Regex(@"^[A-Z]{1}[A-Za-z]{2,}?$");
         public void ValidateLastName()
         {
             Console.Write("Enter Last Name : ");
@@ -40,6 +39,7 @@ namespace Regex01
                 Console.WriteLine("The Last Name Is Not Valid");
             }
         }
+        public Regex Email_Regex = new Regex("^[A-Za-z]{3,}([.][A-Za-z]{3,})?[@][A-Za-z]{2,}[.][A-Za-z]{2,}([.][A-Za-z]{2})?$");
         public void ValidateEmail(string email)
         {
             if (Email_Regex.IsMatch(email))
@@ -50,6 +50,23 @@ namespace Regex01
             {
                 Console.WriteLine("Email Is Not Valid ");
             }
+        }
+        public Regex PhoneNumber_Regex = new Regex("[1-9][0-9][ ]?[6-9][0-9]{9}$");
+        public void ValidatePhoneNumber()
+        {
+            Console.Write("Enter Phone Number : ");
+            string phoneNumber = Console.ReadLine();
+
+            if (PhoneNumber_Regex.IsMatch(phoneNumber))
+            {
+                Console.WriteLine("Phone Number Is Valid ");
+            }
+            else
+            {
+                Console.WriteLine("Phone Number Is Not Valid ");
+            }
+
+
         }
     }
 }

@@ -8,7 +8,8 @@ namespace Regex01
             Console.WriteLine("Welcome to the User Registration Program\n========================================");
             DataValidation validating = new DataValidation();
             bool end = true;
-            Console.WriteLine("1. Validate First Name\n2. Validate Last Name\n3. Validate Email\n4. End The Program");
+            Console.WriteLine("1. Validate First Name\n2. Validate Last Name\n3. Validate Email\n4. " +
+                "Validate Phone Number\n5. End The Program");
             while (end)
             {
                 Console.Write("Choose an option to execute : ");
@@ -28,6 +29,9 @@ namespace Regex01
                         validating.ValidateEmail("abc1232.com");
                         break;
                     case 4:
+                        validating.ValidatePhoneNumber();
+                        break;
+                    case 5:
                         end = false;
                         break;
                     default:
