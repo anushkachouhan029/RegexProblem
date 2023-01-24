@@ -10,6 +10,7 @@ namespace Regex01
     public class DataValidation
     {
         public Regex First_Name_Regex = new Regex(@"^[A-Z]{1}[A-Za-z]{2,}?$");
+        public Regex Last_Name_Regex = new Regex(@"^[A-Z]{1}[A-Za-z]{2,}?$");
         public void ValidateFirstName()
         {
             Console.Write("Enter First Name : ");
@@ -24,5 +25,20 @@ namespace Regex01
                 Console.WriteLine("The First Name Is Not Valid");
             }
         }
+        public void ValidateLastName()
+        {
+            Console.Write("Enter Last Name : ");
+            string lastName = Console.ReadLine();
+
+            if (Last_Name_Regex.IsMatch(lastName))
+            {
+                Console.WriteLine("The Last Name Is Valid ");
+            }
+            else
+            {
+                Console.WriteLine("The Last Name Is Not Valid");
+            }
+        }
     }
+
 }

@@ -6,8 +6,9 @@ namespace Regex01
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the User Registration Program\n========================================");
+            DataValidation validating = new DataValidation();
             bool end = true;
-            Console.WriteLine("1. Validate First Name\n2. End The Program");
+            Console.WriteLine("1. Validate First Name\n2. Validate Last Name\n3. End The Program");
             while (end)
             {
                 Console.Write("Choose an option to execute : ");
@@ -15,10 +16,12 @@ namespace Regex01
                 switch (option)
                 {
                     case 1:
-                        DataValidation validating = new DataValidation();
                         validating.ValidateFirstName();
                         break;
                     case 2:
+                        validating.ValidateLastName();
+                        break;
+                    case 3:
                         end = false;
                         break;
                     default:
